@@ -27,23 +27,12 @@ func getBase64(content []byte) string {
 }
 
 func doRequest() {
-	req, err1 := http.NewRequest("GET", "https://jsonplaceholder.typicode.com/todos/1", nil)
-	if err1 != nil {
-		// handle error
-	}
-	//req.Header.Set("Content-Type", "application/json")
-	req.Header = http.Header{
-		"Accept":       []string{"application/json"},
-		"Content-Type": []string{"application/json"},
-	}
-	client := &http.Client{}
-	res, err2 := client.Do(req)
+	resp, err := http.Get("https://jsonplaceholder.typicode.com/todos/1")
+	if err != nil {
 
-	if err2 != nil {
-		// handle error
 	}
-	defer res.Body.Close()
-	body, err2 := io.ReadAll(res.Body)
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
 	fmt.Println("body", string(body))
 
 }
