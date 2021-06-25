@@ -68,7 +68,6 @@ func main() {
 	type data struct {
 		
 	}
-	var data Data''
 	dat, err := ioutil.ReadFile("./conf.json")
 	json.Decode()
 	check(err)
