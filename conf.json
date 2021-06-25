@@ -1,0 +1,38 @@
+{
+  "nexsoft_message": {
+    "header": {
+      "message_id": "78FG6F67SDF67g",
+      "user_id": "tbuuser",
+      "password": "nex_api_2019",
+      "version": "1.0.1",
+      "principal_id": "Univenus",
+      "timestamp": "2020-01-28T09:51:01.8722171",
+      "action": {
+        "class_name": "Journal",
+        "type_name": "Insert"
+      }
+    },
+    "payload": {
+      "header": {
+        "meta_data": {
+          "chksum_type": "md5",
+          "range": {
+            "from": 0,
+            "to": 0
+          }
+        },
+        "source": {
+          "server_id": "30-24-A9-A8-A6-37"
+        },
+        "destination": {
+          "type": "Group",
+          "group": "Eskalink"
+        }
+      },
+      "data": {
+        "hash": "base64",
+        "type": "SalesOrder"
+      }
+    }
+  }
+}

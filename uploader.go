@@ -4,8 +4,10 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -62,6 +64,13 @@ func main() {
 	//	fmt.Println("64 : ", resultBase64)
 	//
 	//}
-	doRequest()
-
+	//doRequest()
+	dat, err := ioutil.ReadFile("./conf.json")
+	check(err)
+	var data interface{}
+	err3 := json.Unmarshal(dat, &data)
+	// fmt.Println(string(dat))
+	fmt.Println("res", err3)
+	fmt.Println("res", string(dat))
+	fmt.Println(data)
 }
