@@ -65,11 +65,12 @@ func main() {
 	//
 	//}
 	//doRequest()
-	type data struct {
-		
-	}
 	dat, err := ioutil.ReadFile("./conf.json")
-	json.Decode()
 	check(err)
-	fmt.Println(string(dat))
+	var data interface{}
+	err3 := json.Unmarshal(dat, &data)
+	// fmt.Println(string(dat))
+	fmt.Println("res", err3)
+	fmt.Println("res", string(dat))
+	fmt.Println(data)
 }
